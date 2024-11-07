@@ -12,7 +12,8 @@ let package = Package(
         .executable(name: "MemoryLayout", targets: ["MemoryLayout"]),
         .executable(name: "InterOperateWithC", targets: ["InterOperateWithC"]),
         .executable(name: "TypeCast", targets: ["TypeCast"]),
-        .executable(name: "ConsumeBarrow", targets: ["ConsumeBarrow"])
+        .executable(name: "ConsumeBorrowing", targets: ["ConsumeBorrowing"]),
+        .executable(name: "ParameterPack", targets: ["ParameterPack"])
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -38,8 +39,12 @@ let package = Package(
             path: "Sources/TypeCast/"
         ),
         .executableTarget(
-            name: "ConsumeBarrow",
-            path: "Sources/ConsumeBarrow/"
+            name: "ConsumeBorrowing",
+            path: "Sources/ConsumeBorrowing/"
+        ),
+        .executableTarget(
+            name: "ParameterPack",
+            path: "Sources/ParameterPack/"
         )
     ]
 )
