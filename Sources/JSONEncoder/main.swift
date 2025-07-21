@@ -18,3 +18,9 @@ print(Data(greeting.utf8) == data)
 
 print(String(data: data, encoding: .utf8)!) // This will add extra double quotation both end
 print(greeting)
+
+// Forward slashes (/) in JSON strings are escaped as \/ when encoded
+// This is standard JSON escaping behavior for URLs
+let sampleURL = "https://www.sample.com/random/test.json"
+let sampleData = try! jsonEncoder.encode(sampleURL)
+print(String(data: sampleData, encoding: .utf8)!)
