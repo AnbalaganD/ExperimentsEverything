@@ -14,8 +14,12 @@ let package = Package(
         .executable(name: "InterOperateWithC", targets: ["InterOperateWithC"]),
         .executable(name: "TypeCast", targets: ["TypeCast"]),
         .executable(name: "ConsumeBorrowing", targets: ["ConsumeBorrowing"]),
-        .executable(name: "ParameterPack", targets: ["ParameterPack"])
-        .executable(name: "DateTime", targets: ["DateTime"])
+        .executable(name: "ParameterPack", targets: ["ParameterPack"]),
+        .executable(name: "AsyncStreamFoundation", targets: ["AsyncStreamFoundation"]),
+        .executable(name: "ResultBuilder", targets: ["ResultBuilder"]),
+        .executable(name: "PoundDirectiveKeyword", targets: ["PoundDirectiveKeyword"]),
+        .executable(name: "DateTime", targets: ["DateTime"]),
+        .library(name: "core", targets: ["core"])
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,6 +38,7 @@ let package = Package(
         ),
         .executableTarget(
             name: "InterOperateWithC",
+            dependencies: ["core"],
             path: "Sources/InterOperateWithC/"
         ),
         .executableTarget(
@@ -49,8 +54,24 @@ let package = Package(
             path: "Sources/ParameterPack/"
         ),
         .executableTarget(
+            name: "AsyncStreamFoundation",
+            path: "Sources/AsyncStreamFoundation/"
+        ),
+        .executableTarget(
+            name: "ResultBuilder",
+            path: "Sources/ResultBuilder/"
+        ),
+        .executableTarget(
+            name: "PoundDirectiveKeyword",
+            path: "Sources/PoundDirectiveKeyword/"
+        ),
+        .executableTarget(
             name: "DateTime",
             path: "Sources/DateTime/"
+        ),
+        .target(
+            name: "core",
+            path: "Sources/core"
         )
     ]
 )
