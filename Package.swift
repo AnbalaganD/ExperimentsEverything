@@ -72,6 +72,25 @@ let package = Package(
         .target(
             name: "core",
             path: "Sources/core"
+        ),
+        .target(
+            name: "corecpp",
+            path: "Sources/corecpp"
+        ),
+        .executableTarget(
+            name: "Actor",
+            path: "Sources/Actor",
+            swiftSettings: [
+                .enableUpcomingFeature("StrictConcurrency")
+            ]
+        ),
+        .executableTarget(
+            name: "TypedThrow",
+            path: "Sources/TypedThrow",
+            swiftSettings: [
+                .enableUpcomingFeature("StrictConcurrency")
+            ]
         )
-    ]
+    ],
+//    swiftLanguageModes: [.v5]
 )
