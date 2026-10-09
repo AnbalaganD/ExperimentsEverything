@@ -11,8 +11,10 @@
 
 // ******** Flexible Array Member ********
 
-checkFlexibleArrayMember()
+//checkFlexibleArrayMember()
 
 // ******** BitField ********
 
 //checkBitFiled()
+
+printSomething()

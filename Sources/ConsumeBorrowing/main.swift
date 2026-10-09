@@ -172,6 +172,6 @@ func processPayment() {
 
 // Example 2: Letting payment go out of scope naturally (deinit WILL be called)
 func createPayment() {
-    let payment = Payment()
+    _ = Payment()
     // payment goes out of scope here
 }

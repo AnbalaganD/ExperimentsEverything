@@ -1,0 +1,12 @@
+Name: core
+
+Typedefs:
+- Name: my_assert_message_provider_t
+  SwiftName: AssertMessageProvider
+
+Functions:
+- Name: my_assert
+  SwiftName: coreAssert(_:message:)
+  Parameters:
+  - Position: 1
+    Nullability: N

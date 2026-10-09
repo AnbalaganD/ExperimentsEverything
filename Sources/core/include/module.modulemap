@@ -1,0 +1,6 @@
+module core {
+    header "BitField.h"
+    header "IntArray.h"
+    header "misc.h"
+    export *
+}

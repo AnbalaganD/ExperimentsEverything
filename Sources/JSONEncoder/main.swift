@@ -24,3 +24,16 @@ print(greeting)
 let sampleURL = "https://www.sample.com/random/test.json"
 let sampleData = try! jsonEncoder.encode(sampleURL)
 print(String(data: sampleData, encoding: .utf8)!)
+
+// JSONEncoder by default omits the key if the value contains `nil`
+let foo = Foo(label: "Dummy", count: nil)
+let fooData = try! jsonEncoder.encode(foo)
+let fooJson = String(data: fooData, encoding: .utf8)!
+print("\n[Default behaviour] Omit Nil value encoding: \n\(fooJson)")
+
+// To preserve nil values to maintain the structure/contract with other services/consumers
+// we need to do some extra workaround
+let preserveNilfoo = FooPreserveNil(label: "Dummy", count: nil)
+let preserveNilfooData = try! jsonEncoder.encode(preserveNilfoo)
+let preserveNilfooJson = String(data: preserveNilfooData, encoding: .utf8)!
+print("\nPreserve Nil value encoding: \n\(preserveNilfooJson)")

@@ -7,8 +7,8 @@
 
 import Foundation
 
-//let cache = Cache()
-//var temp = await cache.backstore
-//print(temp)
+let cache = Cache()
+var temp = await cache.backstore
+print(temp)
 
 await exampleFunc()
